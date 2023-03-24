@@ -1,0 +1,15 @@
+v: 0
+icon: ./frontend/static/icon.webp
+micros:
+  - name: frontend
+    src: ./frontend
+    engine: svelte-kit
+    primary: true
+
+  - name: backend
+    src: ./backend
+    engine: python3.9
+    dev: ./backend/run.sh
+    path: api
+    presets:
+      api_keys: true
