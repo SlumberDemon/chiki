@@ -9,7 +9,7 @@ micros:
   - name: backend
     src: ./backend
     engine: python3.9
-    dev: ./backend/run.sh
+    dev: ./run.sh
     path: api
     presets:
       api_keys: true
