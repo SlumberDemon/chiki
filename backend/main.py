@@ -5,11 +5,6 @@ app = fastapi.FastAPI()
 todos = Base("todos")
 
 
-@app.get("/")
-async def test():
-    return {"test": "working"}
-
-
 @app.get("/todos")
 async def get_todos():
     res = todos.fetch()
