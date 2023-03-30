@@ -1,43 +1,47 @@
 <script>
-	import { deleteTodo, toggleComplete, editTodo } from '../../store/TodoStore';
+	import { blur } from 'svelte/transition';
+	import { toggleComplete, editTodo, deleteTodo } from '../../store/TodoStore';
 
 	export let todo;
 
 	$: completeClass = todo.complete ? 'bg-green-three' : 'bg-leaf-one';
 </script>
 
-<div class="flex items-center justify-between rounded-md border-2 border-gray-one px-5 py-5">
+<div
+	class="border-gray-one flex items-center justify-between rounded-md border-2 px-5 py-5"
+	in:blur
+>
 	<div class="flex w-full max-w-lg items-center justify-start">
-		<label for={`${todo.id}-checkbox`} class="sr-only">Complete todo</label>
+		<label for={`${todo.key}-checkbox`} class="sr-only">Complete todo</label>
 		<input
-			id={`${todo.id}-checkbox`}
+			id={`${todo.key}-checkbox`}
 			type="checkbox"
 			checked={todo.complete}
-			on:change={() => toggleComplete(todo.id)}
-			class="h-4 w-4 rounded border border-gray-three bg-cream-four text-green-four focus:border-green-five focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-green-five"
+			on:change={() => toggleComplete(todo.key)}
+			class="border-gray-three bg-cream-four text-green-four focus:border-green-five focus:outline-green-five h-4 w-4 rounded border focus:outline focus:outline-2 focus:outline-offset-2"
 		/>
-		<label for={`${todo.id}-text`} class="sr-only">Edit todo</label>
+		<label for={`${todo.key}-text`} class="sr-only">Edit todo</label>
 		<input
-			id={`${todo.id}-text`}
+			id={`${todo.key}-text`}
 			type="text"
 			placeholder="Enter a todo"
 			value={todo.text}
-			on:input={(e) => editTodo(todo.id, e.target.value)}
-			class="ml-5 flex-1 text-ellipsis rounded-none border-x-0 border-t-0 border-b border-dashed border-b-gray-two bg-cream-four px-0 pb-1 text-base font-normal text-gray-three placeholder:text-gray-two focus:border-gray-three focus:outline-none focus:ring-0"
+			on:input={(e) => editTodo(todo.key, e.target.value)}
+			class="border-b-gray-two bg-cream-four text-gray-three placeholder:text-gray-two focus:border-gray-three ml-5 flex-1 text-ellipsis rounded-none border-x-0 border-t-0 border-b border-dashed px-0 pb-1 text-base font-normal focus:outline-none focus:ring-0"
 		/>
 		<span
-			class="{completeClass} ml-5 hidden rounded-full py-0.5 px-2 text-sm font-normal text-gray-five md:block"
+			class="{completeClass} text-gray-five ml-5 hidden rounded-full py-0.5 px-2 text-sm font-normal md:block"
 		>
 			{todo.complete ? 'Complete' : 'In Progress'}
 		</span>
 	</div>
 	<button
 		type="button"
-		on:click={() => deleteTodo(todo.id)}
-		class="group ml-4 flex items-center justify-center rounded-md bg-cream-four p-2 hover:bg-steel-one focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-five"
+		on:click={() => deleteTodo(todo.key)}
+		class="bg-cream-four hover:bg-steel-one focus-visible:outline-green-five group ml-4 flex items-center justify-center rounded-md p-2 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2"
 		><span class="sr-only">Delete Todo</span><svg
 			xmlns="http://www.w3.org/2000/svg"
-			class="h-6 w-6 text-steel-three group-hover:text-gray-five"
+			class="text-steel-three group-hover:text-gray-five h-6 w-6"
 			width="60"
 			height="60"
 			viewBox="0 0 24 24"

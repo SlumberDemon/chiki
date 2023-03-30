@@ -1,57 +1,32 @@
-import { browser } from '$app/environment';
-import { writable } from 'svelte/store';
-import { v4 as uuidv4 } from 'uuid';
-
-const data = browser ? JSON.parse(window.localStorage.getItem('st-todo-lsit')) ?? [] : [];
-
-export const todos = writable(data);
-
-// Auto save
-
-todos.subscribe((value) => {
-	if (browser) {
-		localStorage.setItem('st-todo-list', JSON.stringify(value));
-	}
-});
-
 // Add
 
-export const addTodo = () => {
-	todos.update((currentTodos) => {
-		return [...currentTodos, { id: uuidv4(), text: '', complete: false }];
-	});
-};
+export function addTodo() {
+	fetch(`/api/todos?text=&complete=false`, { method: 'POST' });
+	window.location.reload();
+}
 
 // Delete
 
-export const deleteTodo = (id) => {
-	todos.update((currentTodos) => {
-		return currentTodos.filter((todo) => todo.id !== id);
-	});
-};
+export function deleteTodo(id) {
+	fetch(`/api/todos?key=${id}`, { method: 'DELETE' });
+	window.location.reload();
+}
 
 // Toggle
 
-export const toggleComplete = (id) => {
-	todos.update((currentTodos) => {
-		return currentTodos.map((todo) => {
-			if (todo.id === id) {
-				return { ...todo, complete: !todo.complete };
-			}
-			return todo;
-		});
+export async function toggleComplete(id) {
+	const response = await fetch(`/api/todos/${id}`);
+	const todo = await response.json();
+	const newCompleteVal = !todo.complete;
+	fetch(`/api/todos?key=${id}&complete=${newCompleteVal}&text=${todo.text}`, {
+		method: 'PATCH'
 	});
-};
+}
 
 // Edit
 
-export const editTodo = (id, text) => {
-	todos.update((currentTodos) => {
-		return currentTodos.map((todo) => {
-			if (todo.id === id) {
-				return { ...todo, text };
-			}
-			return todo;
-		});
-	});
-};
+export async function editTodo(id, text) {
+	const response = await fetch(`/api/todos/${id}`);
+	const todo = await response.json();
+	fetch(`/api/todos?key=${id}&text=${text}&complete=${todo.complete}`, { method: 'PATCH' });
+}
