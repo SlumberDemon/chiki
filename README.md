@@ -9,8 +9,6 @@ Chiki the minimal checklist for all your tasks
 
 ## Install
 
-<br/>
-<a href="https://deta.space/discovery" target="_blank"><img src="https://deta.space/buttons/dark.svg" alt="Install on Space" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-</div>
+<a href="https://deta.space/discovery"><img src="https://deta.space/buttons/dark.svg" width=250 height=250></a>
 
 > Learned from [Skillthrive](https://www.youtube.com/watch?v=3MCpUaboF18)
