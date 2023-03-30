@@ -8,4 +8,4 @@ git: "https://github.com/SlumberDemon/chiki"
 ## Comes with
 
 - Minimal UI for mobile and desktop
-- Edit/Delete/Add Tasks
+- Add/Edit/Delete Tasks

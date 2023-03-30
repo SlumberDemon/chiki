@@ -5,7 +5,7 @@ Chiki the minimal checklist for all your tasks
 ## Comes with
 
 - Minimal UI for mobile and desktop
-- Edit/Delete/Add Tasks
+- Add/Edit/Delete Tasks
 
 ## Install
 
