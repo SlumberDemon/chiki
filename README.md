@@ -10,6 +10,6 @@ Chiki the minimal checklist for all your tasks
 
 ## Install
 
-<a href="https://deta.space/discovery"><img src="https://deta.space/buttons/dark.svg" width=250></a>
+<a href="https://deta.space/discovery/@sofa/chiki"><img src="https://deta.space/buttons/dark.svg" width=250></a>
 
 > Learned from [Skillthrive](https://www.youtube.com/watch?v=3MCpUaboF18)
