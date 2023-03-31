@@ -9,3 +9,4 @@ git: "https://github.com/SlumberDemon/chiki"
 
 - Minimal UI for mobile and desktop
 - Add/Edit/Delete Tasks
+- Progress bar

@@ -6,6 +6,7 @@ Chiki the minimal checklist for all your tasks
 
 - Minimal UI for mobile and desktop
 - Add/Edit/Delete Tasks
+- Progress bar
 
 ## Install
 

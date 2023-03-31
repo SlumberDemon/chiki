@@ -21,6 +21,7 @@ export async function toggleComplete(id) {
 	fetch(`/api/todos?key=${id}&complete=${newCompleteVal}&text=${todo.text}`, {
 		method: 'PATCH'
 	});
+	window.location.reload();
 }
 
 // Edit
