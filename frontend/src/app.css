@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@font-face {
+    font-family: 'Inter';
+    font-weight: normal;
+    font-weight: 400;
+    src: url('/frontend/static/fonts/Inter-Regular.woff')
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: bold;
+    font-weight: 700;
+    src: url('/frontend/static/fonts/Inter-Bold.woff')
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: semibold;
+    font-weight: 600;
+    src: url('/frontend/static/fonts/Inter-SemiBold.woff')
+}
 
 @tailwind base;
 @tailwind components;

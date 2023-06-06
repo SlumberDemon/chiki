@@ -1,5 +1,5 @@
 v: 0
-icon: ./frontend/static/icon.webp
+icon: ./frontend/static/icon.png
 micros:
   - name: frontend
     src: ./frontend
@@ -9,7 +9,7 @@ micros:
   - name: backend
     src: ./backend
     engine: python3.9
-    dev: ./run.sh
+    dev: uvicorn main:app
     run: uvicorn main:app
     path: api
     presets:
