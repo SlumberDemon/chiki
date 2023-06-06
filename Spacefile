@@ -10,6 +10,7 @@ micros:
     src: ./backend
     engine: python3.9
     dev: ./run.sh
+    run: uvicorn main:app
     path: api
     presets:
       api_keys: true
