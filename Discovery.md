@@ -1,4 +1,5 @@
 ---
+app_name: "Chiki"
 title: "Chiki: Minimal checklist"
 tagline: "Chiki the minimal checklist for all your tasks"
 theme_color: "#E1EAE2"
