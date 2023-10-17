@@ -14,7 +14,7 @@
 		"@sveltejs/kit": "^1.5.0",
 		"@tailwindcss/forms": "^0.5.3",
 		"autoprefixer": "^10.4.13",
-		"postcss": "^8.4.21",
+		"postcss": "^8.4.31",
 		"prettier": "^2.8.4",
 		"prettier-plugin-svelte": "^2.9.0",
 		"prettier-plugin-tailwindcss": "^0.2.3",
